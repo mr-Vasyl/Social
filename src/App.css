@@ -1,0 +1,27 @@
+.appWrapper{
+  display: grid;
+  background-color: #e9ebee;
+  width: 1012px;
+  margin: 0 auto;
+ 
+
+  grid-template-areas: 
+  "head head"
+  "nav cont";
+
+  grid-template-rows: 50px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 20px;
+}
+
+body {
+  background-color: #e9ebee;
+}
+
+.appWrapperContent {
+  
+    grid-area: cont;
+    background-color: #ffffff;
+  
+}
+

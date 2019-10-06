@@ -1,0 +1,17 @@
+.background {
+    height: 200px;
+    background-color: #3d4047;
+  }
+.descriptionBlock {
+    display: grid;
+    grid-template-columns: 3fr 6fr;
+    padding: 10px;
+  }
+
+  .avatar {
+
+  }
+
+.description {
+
+}

@@ -1,0 +1,12 @@
+.mainHeader {
+    grid-area: head; 
+    background-color: #4267b3;  
+    }
+  .headerNavigation {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+  .Search {
+        margin-top: 10px;
+        
+    }
