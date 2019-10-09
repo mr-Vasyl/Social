@@ -3,7 +3,7 @@ import Friends from './Friends/Friends';
 import s from "./FriendsList.module.css";
 const FriendsList = (props) => {
 
-  let frendsElements = props.peopleList.
+  let frendsElements = props.store._state.sideBar.peopleList.
   map((p) => <Friends name={p.name}/>)
 
   return (

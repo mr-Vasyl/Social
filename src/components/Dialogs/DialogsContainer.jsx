@@ -5,27 +5,31 @@ import Message from "./Message/Message";
 import PropTypes from 'prop-types';
 import { updadeNewMessageBodyCreator, sendMessageCreator } from '../../Redux/DialogsReducer';
 import Dialogs from './Dialogs';
+import {connect} from "react-redux";
 
 
-const DialogsContainer = (props) => {
-  let state = props.store.getState().dialogsPage;
-
-  let onSendMessageClick = () => {
-    props.store.dispatch(sendMessageCreator())
+let mapStateToProps = (state) => {
+  return {
+    dialogsPage: state.dialogsPage
   }
-  let onNewMessageChenge = (body) => {
-    props.store.dispatch(updadeNewMessageBodyCreator(body))
-  }
-
-  return  <Dialogs updadeNewMessageBody={onNewMessageChenge} sendMessage={onSendMessageClick} dialogsPage={state}/>
- 
 }
+let mapDispatchToProps = (dispatch) => {
+  return {
+    updadeNewMessageBody: () => {
+      dispatch(sendMessageCreator())
+    },
+    sendMessage: (body) => {
+      dispatch(updadeNewMessageBodyCreator(body))
+    }
+  }
+}
+const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
 
 export default DialogsContainer;
 
-DialogsContainer.propTypes = {
-  dialogsPage: PropTypes.shape({
-    dialogs: PropTypes.isRequired,
-    messages: PropTypes.isRequired,
-  }).isRequired
-}
+// DialogsContainer.propTypes = {
+//   dialogsPage: PropTypes.shape({
+//     dialogs: PropTypes.isRequired,
+//     messages: PropTypes.isRequired,
+//   }).isRequired
+// }

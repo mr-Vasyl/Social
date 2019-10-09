@@ -13,10 +13,10 @@ const Navigation = (props) => {
                 <div className={s.item}><NavLink to="/music" activeClassName={s.activeLink}>Music</NavLink></div>
                 <div className={s.item}><NavLink to="/settings" activeClassName={s.activeLink}>Settings</NavLink></div>
             </nav>
-            <div className={s.peopleList}>
-                <div className={s.friendsTitle}><NavLink to="/people" activeClassName={s.activeLink}>Friends</NavLink></div>
-                <div className={s.friendsList}><FriendsList peopleList={props.state.peopleList} /></div>
-            </div>
+            {/*<div className={s.peopleList}>*/}
+            {/*    <div className={s.friendsTitle}><NavLink to="/people" activeClassName={s.activeLink}>Friends</NavLink></div>*/}
+            {/*    <div className={s.friendsList}><FriendsList store={props.store} /></div>*/}
+            {/*</div>*/}
 
         </div>
 
