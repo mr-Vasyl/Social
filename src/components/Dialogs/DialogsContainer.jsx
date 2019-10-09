@@ -3,7 +3,7 @@ import s from "./Dialogs.module.css";
 import Dialog from "./Dialog/Dialog";
 import Message from "./Message/Message";
 import PropTypes from 'prop-types';
-import { updadeNewMessageBodyCreator, sendMessageCreator } from '../../Redux/DialogsReducer';
+import { updateNewMessageBodyCreator, sendMessageCreator } from '../../Redux/DialogsReducer';
 import Dialogs from './Dialogs';
 import {connect} from "react-redux";
 
@@ -15,11 +15,11 @@ let mapStateToProps = (state) => {
 }
 let mapDispatchToProps = (dispatch) => {
   return {
-    updadeNewMessageBody: () => {
+    sendMessage: () => {
       dispatch(sendMessageCreator())
     },
-    sendMessage: (body) => {
-      dispatch(updadeNewMessageBodyCreator(body))
+    updateNewMessageBody: (body) => {
+      dispatch(updateNewMessageBodyCreator(body))
     }
   }
 }

@@ -9,7 +9,7 @@ const Dialogs = (props) => {
   let state = props.dialogsPage;
 
   let dialogsElements = state.dialogs.
-    map((d) => < Dialog key={d.id} name={d.name} id={d.id} />
+    map((d) => < Dialog key={d.id} name={d.name}  id={d.id} />
     )
 
   let messagesElements = state.messages.
@@ -22,7 +22,7 @@ const Dialogs = (props) => {
   }
   let onNewMessageChenge = (e) => {
     let body = e.target.value;
-    props.updadeNewMessageBody(body)
+    props.updateNewMessageBody(body)
     
   }
 
