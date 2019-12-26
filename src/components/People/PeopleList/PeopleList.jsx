@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const peopleList = (props) => {
-  return <div className>{props.name}</div>
+  return <div>{props.name}</div>
 }
 export default peopleList;
 

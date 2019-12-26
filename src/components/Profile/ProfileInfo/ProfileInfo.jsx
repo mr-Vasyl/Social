@@ -4,7 +4,7 @@ import s from "./ProfileInfo.module.css"
 
 const ProfileInfo = (props) => {
   return (
-    <div className>
+    <div>
       <div className={s.background}></div>
 
       <div className={s.descriptionBlock}>

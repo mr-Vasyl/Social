@@ -1,6 +1,5 @@
 import React from 'react'
 import s from './Users.module.css'
-
 import userPhoto from '../../img/user.jpg'
 
 let Users = (props) => {
