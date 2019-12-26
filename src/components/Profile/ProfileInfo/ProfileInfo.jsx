@@ -1,22 +1,23 @@
 import React from 'react';
 import s from "./ProfileInfo.module.css"
+import Preloader from "../../Common/Preloader/Preloader";
 
 
 const ProfileInfo = (props) => {
+  if (!props.profile) {
+    return <Preloader/>
+  }
   return (
     <div>
       <div className={s.background}></div>
 
       <div className={s.descriptionBlock}>
         <div className={s.avatar}>
-          <img src={window.location.origin + '/avatar.png'} />
+          <img src={props.profile.photos.large} />
         </div>
         <div className={s.description}>
           <p>Vasylss H.</p>
-          <p>pavatar: diskription</p>
-          <p>pavatar: diskription</p>
-          <p>pavatar: diskription</p>
-          <p>pavatar: diskription</p>
+          <p>pavatar: diskrption</p>
         </div>
       </div>
 
