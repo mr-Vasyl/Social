@@ -1,6 +1,6 @@
 .mainHeader {
     grid-area: head; 
-    background-color: #4267b3;  
+    background-color: #4267b3;
     }
   .headerNavigation {
         display: grid;
@@ -10,3 +10,6 @@
         margin-top: 10px;
         
     }
+  .loginBlock {
+      float: right;
+  }
