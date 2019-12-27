@@ -22,9 +22,9 @@ export const usersAPI = {
 
 
 
-export const getUsers2 = (currentPage, pageSize) => {
-    return instance.get(`follow?page=${currentPage} & count=${pageSize} `,)
-        .then(response => {
-            return response.data
-        })
-}
+// export const getUsers2 = (currentPage, pageSize) => {
+//     return instance.get(`follow?page=${currentPage} & count=${pageSize} `,)
+//         .then(response => {
+//             return response.data
+//         })
+// }
