@@ -10,7 +10,10 @@ const maxLength10 = maxLengthCreator(10);
 
 const MyPosts = React.memo(props => {
 
-    let postsElements = props.posts.map((p) => <Post massage={p.message} likesCount={p.likesCount}/>)
+    let postsElements =
+        [...props.posts]
+            .reverse()
+            .map((p) => <Post massage={p.message} likesCount={p.likesCount}/>)
     let newPostElement = React.createRef();
     let onAddPost = (values) => {
         props.onAddPost(values.newPostText)
