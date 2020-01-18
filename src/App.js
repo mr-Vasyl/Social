@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import Navigation from './components/Navigation/Navigation';
-import {BrowserRouter, Route, withRouter} from "react-router-dom";
+import {Route, withRouter} from "react-router-dom";
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
@@ -22,33 +22,31 @@ class App extends Component {
     }
 
     render() {
-      if(!this.props.initialized) {
-        return <Preloader/>
-      }
+        if (!this.props.initialized) {
+            return <Preloader/>
+        }
 
         return (
-            <BrowserRouter>
-                <div className="appWrapper">
-                    <HeaderContainer/>
-                    <Navigation/>
-                    <div className={"appWrapperContent"}>
-                        < Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
-                        < Route path='/dialogs' render={() => <DialogsContainer store={this.props.store}/>}/>
-                        < Route path='/users' render={() => <UsersContainer/>}/>
-                        < Route path='/news' render={() => <News/>}/>
-                        < Route path='/music' render={() => <Music/>}/>
-                        < Route path='/settings' render={() => <Settings/>}/>
-                        < Route path='/login' render={() => <Login/>}/>
-                        < Route path='/people' render={() => <People state={this.props.state.sideBar}/>}/>
-                    </div>
+            <div className="appWrapper">
+                <HeaderContainer/>
+                <Navigation/>
+                <div className={"appWrapperContent"}>
+                    < Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
+                    < Route path='/dialogs' render={() => <DialogsContainer store={this.props.store}/>}/>
+                    < Route path='/users' render={() => <UsersContainer/>}/>
+                    < Route path='/news' render={() => <News/>}/>
+                    < Route path='/music' render={() => <Music/>}/>
+                    < Route path='/settings' render={() => <Settings/>}/>
+                    < Route path='/login' render={() => <Login/>}/>
+                    < Route path='/people' render={() => <People state={this.props.state.sideBar}/>}/>
                 </div>
-            </BrowserRouter>
-
+            </div>
         );
     }
 }
+
 const mapStateToProps = (state) => ({
-  initialized: state.app.initialized
+    initialized: state.app.initialized
 })
 export default compose(
     withRouter,
