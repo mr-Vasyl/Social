@@ -13,7 +13,7 @@ const MyPosts = React.memo(props => {
     let postsElements =
         [...props.posts]
             .reverse()
-            .map((p) => <Post massage={p.message} likesCount={p.likesCount}/>)
+            .map((p) => <Post key={p.id} massage={p.message} likesCount={p.likesCount}/>)
     let newPostElement = React.createRef();
     let onAddPost = (values) => {
         props.onAddPost(values.newPostText)
