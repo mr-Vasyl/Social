@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import Navigation from './components/Navigation/Navigation';
-import {Route, withRouter} from "react-router-dom";
+import {Redirect, Route, Switch, withRouter} from "react-router-dom";
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
@@ -15,7 +15,6 @@ import {compose} from "redux";
 import {initializeApp} from "./Redux/AppReducer";
 import Preloader from "./components/Common/Preloader/Preloader";
 import {withSuspense} from "./Hoc/withSuspense";
-// import UsersContainer from "./components/Users/UsersContainer";
 const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'));
 
 class App extends Component {
@@ -33,14 +32,18 @@ class App extends Component {
                 <HeaderContainer/>
                 <Navigation/>
                 <div className={"appWrapperContent"}>
-                    < Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
-                    < Route path='/dialogs' render={() => <DialogsContainer store={this.props.store}/>}/>
-                    < Route path='/users' render={withSuspense(UsersContainer)}/>
-                    < Route path='/news' render={() => <News/>}/>
-                    < Route path='/music' render={() => <Music/>}/>
-                    < Route path='/settings' render={() => <Settings/>}/>
-                    < Route path='/login' render={() => <Login/>}/>
-                    < Route path='/people' render={() => <People state={this.props.state.sideBar}/>}/>
+                    <Switch>
+                        < Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
+                        < Route exact path='/' render={() => <Redirect to={"/profile"}/>}/>
+                        < Route path='/dialogs' render={() => <DialogsContainer store={this.props.store}/>}/>
+                        < Route path='/users' render={withSuspense(UsersContainer)}/>
+                        < Route path='/news' render={() => <News/>}/>
+                        < Route path='/music' render={() => <Music/>}/>
+                        < Route path='/settings' render={() => <Settings/>}/>
+                        < Route path='/login' render={() => <Login/>}/>
+                        < Route path='/people' render={() => <People state={this.props.state.sideBar}/>}/>
+                        < Route path='*' render={() => <div>404 NOT FOUND</div>}/>
+                    </Switch>
                 </div>
             </div>
         );
