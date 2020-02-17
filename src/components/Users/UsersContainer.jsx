@@ -8,6 +8,7 @@ import {
 } from "../../Redux/UsersReducer";
 import {compose} from "redux";
 import {
+    getAuth,
     getFollowingInProgress,
     getIsFetching,
     getPageSize,
@@ -39,6 +40,7 @@ class UsersContainer extends React.Component {
                    unFollow={this.props.unFollow}
                    onPageChanged={this.onPageChanged}
                    followingInProgress={this.props.followingInProgress}
+                   isAuth={this.props.isAuth}
 
             />
         </>
@@ -53,7 +55,9 @@ let mapStateToProps = (state) => {
         totalUsersCount: getTotalUsersCount(state),
         currentPage: getUCurrentPage(state),
         isFetching: getIsFetching(state),
-        followingInProgress: getFollowingInProgress(state)
+        followingInProgress: getFollowingInProgress(state),
+        isAuth: getAuth(state)
+
     }
 }
 export default compose(

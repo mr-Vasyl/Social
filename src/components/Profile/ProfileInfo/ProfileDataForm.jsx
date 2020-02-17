@@ -1,14 +1,15 @@
 import React from 'react';
-import {createField, Input, Textarea} from "../../Common/FormsControls/FormControls";
+import {createField, Input, textarea} from "../../Common/FormsControls/FormControls";
 import {reduxForm} from "redux-form";
-import style from "./ProfileInfo.module.css"
+import style from "./ProfilDataForm.module.css"
 import s from "./../../Common/FormsControls/FormControls.module.css";
 
-const ProfileDataForm = ({handleSubmit, profile, error}) => {
+
+ const ProfileDataForm = ({handleSubmit, profile, error}) => {
     return (
         <form onSubmit={handleSubmit}>
             <div>
-                <button>save</button>
+                <button className={[style.saveSubmCont, style.transition].join(' ')}>Save</button>
             </div>
             {error &&
             <div className={s.formSummaryError}>{error}
@@ -23,12 +24,12 @@ const ProfileDataForm = ({handleSubmit, profile, error}) => {
                 {createField("", "lookingForAJob", [], Input, {type: "checkbox"})}
             </div>
             <div>
-                <b>My skills:</b>:
-                {createField("My skills", "lookingForAJobDescription", [], Textarea)}
+                <b>My skills</b>:
+                {createField("My skills", "lookingForAJobDescription", [], textarea)}
             </div>
 
             <div><b>About me:</b></div>
-            {createField("About me", "aboutMe", [], Textarea)}
+            {createField("About me", "aboutMe", [], textarea)}
             <div><b>Contacts</b>: {Object.keys(profile.contacts).map(key => {
                 return <div key={key} className={style.contacs}>
                     <b>{key}:{createField("Full name", "contacts." + key, [], Input)}</b>

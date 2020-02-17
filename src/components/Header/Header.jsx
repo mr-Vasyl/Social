@@ -1,18 +1,33 @@
 import React from 'react';
 import s from "./Header.module.css"
 import {NavLink} from "react-router-dom";
+import {Button} from 'antd';
+
 
 const Header = (props) => {
+
+
     return (
-        <header className={s.mainHeader}>
-            <div className={s.headerNavigation}><img src={window.location.origin + '/logomini.png'}/>
+        <header className={s.mainHeader + " " + s.box }>
+            <div className={s.headerNavigation}>
+                <NavLink to={'/profile'}>
+                    <img src={window.location.origin + '/logo.svg'} />
+                </NavLink>
+
+                <div className={s.loginBlock}>
+                    {props.isAuth
+
+                        ? <span><b>{props.login}</b> <Button type="primary"  onClick={props.logout}>Log out</Button></span>
+
+                        : <div className={s.ddd}>
+                            <NavLink to={'/login'}><Button type="primary" >Login</Button></NavLink>
+                            <NavLink to={'/register'}><Button type="primary">Register</Button></NavLink>
+                        </div>
+                    }
+                </div>
+
             </div>
-            <div className={s.loginBlock}>
-                {props.isAuth
-                    ? <div>{props.login} - <button onClick={props.logout}>Log out</button></div>
-                    : <NavLink to={'/login'}>Login</NavLink>
-                }
-            </div>
+
         </header>
     )
 }

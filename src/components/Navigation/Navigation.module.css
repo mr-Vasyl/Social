@@ -1,29 +1,26 @@
 .navigation {
   grid-area: nav;
+  padding-left: 10px;
+
+
 }
 .activeLink {
-  color: black;
-  font-weight: 650;
+  /*color: black;*/
+
+
 }
 
 .item a{
   color:  black;
-  text-decoration: none;
+  /*text-decoration: none;*/
+}
+.item :hover {
+  color: #1890ff
 }
 
-.friendsList {
-  font-size: 15px;
-  
-}
+.item {
+  font-size: 18px;
+  font-weight: 500;
 
-.friendsTitle > a {
-  
-  text-decoration: none;
-  font-weight: 600;
-  color: black;
-  
-  
-}
-.peopleList {
-  padding-top: 90px;
+
 }

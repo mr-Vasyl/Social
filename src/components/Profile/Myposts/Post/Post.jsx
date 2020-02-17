@@ -1,14 +1,19 @@
 import React from 'react';
 import s from "./Post.module.css";
 import PropTypes from 'prop-types';
+import {Icon} from "antd";
 
 const Post = (props) => {
-  return (
-    <div className={s.item}>
-      <img className={s.postImg} src={window.location.origin + '/avatar.png'} />
-      <span>{props.massage}</span>
-      <span> ♥{props.likesCount}</span>
-    </div>
+  return (<div>
+
+          <div className={s.item}>
+              <img className={s.postImg} src={window.location.origin + '/logo.png'} />
+              <span className={s.addMessage} >{props.massage}</span>
+              <span> <Icon type="like" />{props.likesCount}</span>
+          </div>
+      </div>
+
+
   );
 }
 

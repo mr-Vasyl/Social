@@ -15,6 +15,8 @@ import {compose} from "redux";
 import {initializeApp} from "./Redux/AppReducer";
 import Preloader from "./components/Common/Preloader/Preloader";
 import {withSuspense} from "./Hoc/withSuspense";
+import Register from "./components/Register/Register";
+import Footer from "./components/Footer/Footer";
 const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'));
 
 class App extends Component {
@@ -31,18 +33,23 @@ class App extends Component {
             <div className="appWrapper">
                 <HeaderContainer/>
                 <Navigation/>
+                <Footer/>
                 <div className={"appWrapperContent"}>
                     <Switch>
                         < Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
                         < Route exact path='/' render={() => <Redirect to={"/profile"}/>}/>
                         < Route path='/dialogs' render={() => <DialogsContainer store={this.props.store}/>}/>
-                        < Route path='/users' render={withSuspense(UsersContainer)}/>
+                        < Route path='/users' render={withSuspense(UsersContainer  ) }/>
                         < Route path='/news' render={() => <News/>}/>
                         < Route path='/music' render={() => <Music/>}/>
                         < Route path='/settings' render={() => <Settings/>}/>
                         < Route path='/login' render={() => <Login/>}/>
+
+                        < Route path='/register' render={() => <Register/>}/>
+
                         < Route path='/people' render={() => <People state={this.props.state.sideBar}/>}/>
-                        < Route path='*' render={() => <div>404 NOT FOUND</div>}/>
+                        < Route path='*' render={() => <div>404. Page Not Found</div>}/>
+
                     </Switch>
                 </div>
             </div>

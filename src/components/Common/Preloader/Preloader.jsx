@@ -1,9 +1,16 @@
 import React from 'react'
-import preloader from '../../../img/loader.gif'
+import s from "./Preloader.module.css";
+import {Spin} from 'antd';
 
 let Preloader = (props) => {
-    return <div>
-        <img src={preloader}/>
-    </div>
+
+    return (
+        <div className={s.loadingSpin}>
+            <Spin size="large" />
+        </div>
+    )
+
+
 }
-export default Preloader;
+export default Preloader
+

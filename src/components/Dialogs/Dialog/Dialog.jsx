@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const Dialog = (props) => {
 
 
-  return <div className={s.dialogs + " " + s.active}>
+  return <div className={s.dialog + " " + s.active}>
     <NavLink to={"/dialods/" + props.id}>{props.name}</NavLink></div>
 }
 

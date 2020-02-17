@@ -5,8 +5,9 @@ import {required} from "../../utils/validators/validators";
 import {connect} from "react-redux";
 import {login} from "../../Redux/AuthReducer";
 import {Redirect} from "react-router-dom";
-import s from "./../Common/FormsControls/FormControls.module.css";
+import s from "../Login/Login.module.css";
 
+import Spoiler from "./Spoiler";
 
 const LoginForm = ({handleSubmit, error, captchaUrl}) => {
 
@@ -15,7 +16,7 @@ const LoginForm = ({handleSubmit, error, captchaUrl}) => {
 
             {createField("Email", "email", [required], Input)}
             {createField("Password", "password", [required], Input, {type: "password"})}
-            {createField(null, "rememberMe", [], Input, {type: "checkbox"}, "remember me")}
+            {createField(null, "rememberMe", [], Input, {type: "checkbox"}, "")}
 
             {captchaUrl && <img src={captchaUrl}/>}
             {captchaUrl &&
@@ -25,9 +26,9 @@ const LoginForm = ({handleSubmit, error, captchaUrl}) => {
             <div className={s.formSummaryError}>{error}
             </div>
             }
-            <div>
-                <button>login</button>
-            </div>
+
+            <button className={[s.llll, s.transition].join(' ')}>login</button>
+
         </form>
     )
 }
@@ -44,10 +45,15 @@ const Login = (props) => {
         return < Redirect to={"/profile"}/>
     }
 
-    return <div>
-        <h1>Login</h1>
-        <LoginReduxForm captchaUrl={props.captchaUrl} onSubmit={onSubmit}/>
-    </div>
+    return (
+        <div className={s.ss}>
+            <span><h1>Log In</h1>
+                <LoginReduxForm captchaUrl={props.captchaUrl} onSubmit={onSubmit}/>
+            </span>
+            <span className={s.spoiler}><Spoiler/></span>
+        </div>
+    )
+
 
 }
 

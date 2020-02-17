@@ -1,30 +1,32 @@
 import React from 'react';
 import s from "./FormControls.module.css"
-import {required} from "../../../utils/validators/validators";
-import {Field} from "redux-form";
 
-const FormControl = ({input, meta: {touched, error}, children, ...props}) => {
+import {Field} from "redux-form";
+import {  Input as InputLog } from 'antd';
+const { TextArea } = InputLog;
+const FormControls = ({input, meta: {touched, error}, children, ...props}) => {
 
     const hasError = touched && error
     return (
         <div className={s.formControl + " " + (hasError ? s.error : " ")}>
             <div>
                 {children}
+                {hasError && <span>{error}</span>}
             </div>
-            {hasError && <span>{error}</span>}
+
         </div>
     )
 
 }
 
-export const Textarea = (props) => {
+export const textarea = (props) => {
     const {input, meta, child, ...restProps} = props
-    return <FormControl {...props}><textarea {...input} {...restProps} /></FormControl>
+    return <FormControls {...props}><TextArea className={s.qwe} rows={3} {...input} {...restProps} /></FormControls>
 
 }
 export const Input = (props) => {
     const {input, meta, child, ...restProps} = props;
-    return <FormControl {...props}><input {...input} {...restProps} /></FormControl>
+    return <FormControls {...props}><InputLog className={s.exampleInput}  {...input} {...restProps} /></FormControls>
 
 }
 
@@ -34,7 +36,10 @@ export const createField = (placeholder, name, validators, component, props = {}
         <Field placeholder={placeholder} name={name}
                validate={validators}
                component={component}
-               {...props}/>{text}
+               {...props}
+               />{text}
+
+
     </div>
 )
 

@@ -1,9 +1,12 @@
+.qqq {
+    color: #4267b3;
+}
 .messages {
     background-color: #ffffff;
-  }
-  
-  .messagesNavigation {
+}
+
+.messagesNavigation {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-  }
-  
+}
+

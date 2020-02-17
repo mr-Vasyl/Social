@@ -1,0 +1,20 @@
+.saveSubmCont {
+    padding: 0;
+    border: 1px solid #d9d9d9;
+    font: inherit;
+    color: white;
+    background-color: transparent;
+    height:32px;
+    width: 54px ;
+    border-radius: 5px;
+    background-color: #1890ff;
+}
+.saveSubmCont:hover {
+    /*border: 1px solid #1890ff;*/
+    background-color: rgba(24, 144, 255, 0.84)
+
+    /*border: none;*/
+}
+.transition {
+    transition: 0.3s;
+}

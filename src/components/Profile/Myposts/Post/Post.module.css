@@ -1,6 +1,15 @@
-
+.item {
+  padding-top: 10px;
+}
 .postImg {
-  width: 40px;
-  height: 40px;
- 
+  width: 48px;
+  height: 49px;
+  border-radius: 100px; /* Радиус скругления */
+
+  box-shadow: 0 0 7px #666; /* Параметры тени */
+}
+
+
+.addMessage {
+  padding-left: 10px;
 }

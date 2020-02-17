@@ -4,13 +4,17 @@ import {stopSubmit} from "redux-form";
 const ADD_POST = 'ADD_POST';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_STATUS = 'SET_STATUS';
-const DELETE_POST = "DELETE_POST"
 const SAVE_PHOTO_SUCCESS = "SAVE_PHOTO_SUCCESS"
 
 let initialState = {
     posts: [
-        {message: "Hi, how are you?", id: 1, likesCount: 12},
-        {message: "It is my first post!", id: 2, likesCount: 24},
+
+        {message: "It is my first post!", id: 1, likesCount: 24},
+        {message: "Hi, how are you?", id: 2, likesCount: 12},
+        {message: "“It makes a big difference in your life when you stay positive.”", id: 3, likesCount: 56},
+        {message: "“Success is the sum of small efforts repeated day in and day out.”", id: 4, likesCount: 44},
+        {message: "“Happiness is the only thing that multiplies when you share it.”", id: 5, likesCount: 38},
+
     ],
     profile: null,
     status: "",
@@ -19,15 +23,15 @@ let initialState = {
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST: {
-            debugger
             let newPost = {
-                id: 5,
+                id: 6,
                 message: action.newPostText,
                 likesCount: 0,
             };
             return {
                 ...state,
-                posts: [...state.posts, newPost]
+                posts: [...state.posts, newPost],
+                newPostText: ''
             };
         }
 
@@ -44,12 +48,7 @@ const profileReducer = (state = initialState, action) => {
                 profile: action.profile
             }
         }
-        case DELETE_POST: {
-            return {
-                ...state,
-                posts: state.posts.filter(p => p.id !== action.postId)
-            }
-        }
+
         case SAVE_PHOTO_SUCCESS: {
             return {
                 ...state,
@@ -67,8 +66,6 @@ export const setUserProfile = (profile) =>
     ({type: SET_USER_PROFILE, profile});
 export const setStatus = (status) =>
     ({type: SET_STATUS, status});
-export const deletePost = (postId) =>
-    ({type: DELETE_POST, postId});
 export const savePhotoSuccess = (photos) =>
     ({type: SAVE_PHOTO_SUCCESS, photos});
 

@@ -1,31 +1,21 @@
-.myPosts {
-    padding: 10px;
-
-}
-
-.myPosts h3 {
-    padding-top: 10px;
-    text-align: center;
-}
-
-.btn {
+.sendMessage {
     padding: 0;
     border: 1px solid #d9d9d9;
     font: inherit;
     color: inherit;
     background-color: transparent;
-    height: 32px;
-    width: 88px;
+    height:32px;
+    width: 88px ;
     border-radius: 5px
 }
 
-.btn:hover {
+.sendMessage:hover {
     border: 1px solid #1890ff;
     color: #1890ff;
     /*border: none;*/
 
 }
-
 .transition {
-    transition: 0.3s;
+    transition: 0.5s;
 }
+

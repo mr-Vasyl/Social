@@ -1,24 +1,25 @@
-.background {
-    height: 200px;
-    background-color: #3d4047;
-  }
+
 .descriptionBlock {
-    display: grid;
-    grid-template-columns: 3fr 6fr;
     padding: 10px;
   }
 
-  .avatar {
-
-  }
-
-.description {
-
-}
-
 .mainPhoto {
-    max-width: 200px;
+    max-width: 225px;
 }
 .contacs {
     padding-left: 10px;
+}
+
+.avatar input[type=file] {
+   width: 225px;
+}
+.inputType {
+    margin-top: 5px;
+    float: left;
+
+}
+
+
+.qwweedd {
+    /*width: 100px;*/
 }
