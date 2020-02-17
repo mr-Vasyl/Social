@@ -1,8 +1,8 @@
-import {authAPI, securityAPI} from "../Api/Api";
 import {stopSubmit} from "redux-form"
+import {authAPI, securityAPI} from "../Api/Api";
 
-const SET_USER_DATA = 'network/auth/SET_USER_DATA'
-const GET_CAPTCHA_URL_SUCCESS = 'network/auth/GET_CAPTCHA_URL_SUCCESS'
+const SET_USER_DATA = 'network/auth/SET_USER_DATA';
+const GET_CAPTCHA_URL_SUCCESS = 'network/auth/GET_CAPTCHA_URL_SUCCESS';
 
 let initialState = {
     userId: null,
@@ -20,7 +20,6 @@ const authReducer = (state = initialState, action) => {
                 ...state,
                 ...action.payload
             }
-
         default:
             return state;
     }
@@ -31,7 +30,6 @@ export const setAuthUserData = (userId, email, login, isAuth) =>
 
 export const getCaptchaUrlSuccess = (captchaUrl) =>
     ({type: GET_CAPTCHA_URL_SUCCESS, payload: {captchaUrl}});
-
 
 export const getAuthUserData = () => async (dispatch) => {
     let response = await authAPI.me()
@@ -55,13 +53,12 @@ export const login = (email, password, rememberMe, captcha) => async (dispatch) 
         dispatch(stopSubmit("login", {_error: message}))
     }
 }
+
 export const getCaptchaUrl = () => async (dispatch) => {
     const response = await securityAPI.getCaptchaUrl();
     const captchaUrl = response.data.url
     dispatch(getCaptchaUrlSuccess(captchaUrl))
-
 }
-
 
 export const logout = () => async (dispatch) => {
     let response = await authAPI.logout()
@@ -70,6 +67,5 @@ export const logout = () => async (dispatch) => {
         dispatch(setAuthUserData(null, null, null, false))
     }
 }
-
 
 export default authReducer;

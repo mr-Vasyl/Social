@@ -1,15 +1,15 @@
 import React from 'react';
-import {createField, Input, textarea} from "../../Common/FormsControls/FormControls";
 import {reduxForm} from "redux-form";
+
+import {createField, Input, textarea} from "../../Common/FormsControls/FormControls";
 import style from "./ProfilDataForm.module.css"
 import s from "./../../Common/FormsControls/FormControls.module.css";
 
-
- const ProfileDataForm = ({handleSubmit, profile, error}) => {
+const ProfileDataForm = ({handleSubmit, profile, error}) => {
     return (
         <form onSubmit={handleSubmit}>
             <div>
-                <button className={[style.saveSubmCont, style.transition].join(' ')}>Save</button>
+                <button className={style.saveSubmCont + " " + style.transition}>Save</button>
             </div>
             {error &&
             <div className={s.formSummaryError}>{error}
@@ -40,7 +40,7 @@ import s from "./../../Common/FormsControls/FormControls.module.css";
     )
 }
 
-const ProfileDataFormRedux = reduxForm({form: "edit-profile"})(ProfileDataForm)
+const ProfileDataFormRedux = reduxForm({form: "edit-profile"})(ProfileDataForm);
 export default ProfileDataFormRedux
 
 

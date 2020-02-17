@@ -1,5 +1,4 @@
 import React from 'react';
-import s from "./ProfileInfo.module.css"
 
 class ProfileStatus extends React.Component {
 
@@ -11,7 +10,6 @@ class ProfileStatus extends React.Component {
     activateEditMode = () => {
         this.setState({
             editMode: true
-
         })
     }
     deActivateEditMode = () => {
@@ -25,7 +23,6 @@ class ProfileStatus extends React.Component {
         this.setState({
             status: e.currentTarget.value,
         });
-
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -52,7 +49,6 @@ class ProfileStatus extends React.Component {
                            value={this.state.status}/>
                 </div>
                 }
-
             </div>
         )
     }

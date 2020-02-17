@@ -1,9 +1,0 @@
-.messages {
-    background-color: #ffffff;
-  }
-  
-  .messagesNavigation {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-  

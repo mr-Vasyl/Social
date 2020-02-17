@@ -1,6 +1,5 @@
 .myPosts {
     padding: 10px;
-
 }
 
 .myPosts h3 {
@@ -22,8 +21,6 @@
 .btn:hover {
     border: 1px solid #1890ff;
     color: #1890ff;
-    /*border: none;*/
-
 }
 
 .transition {

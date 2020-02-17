@@ -1,8 +1,9 @@
 import React from 'react'
-import s from './Users.module.css'
-import userPhoto from '../../img/user.svg'
 import {NavLink} from "react-router-dom";
 import {Button} from 'antd';
+
+import s from './Users.module.css'
+import userPhoto from '../../img/user.svg'
 
 let User = ({user, followingInProgress, unFollow, follow}) => {
 
@@ -11,7 +12,7 @@ let User = ({user, followingInProgress, unFollow, follow}) => {
 
             <div className={s.userInfo}>
                 <NavLink to={'/profile/' + user.id}>
-                    <img src={user.photos.small != null ? user.photos.small : userPhoto}
+                    <img alt="userPhoto" src={user.photos.small != null ? user.photos.small : userPhoto}
                          className={s.userPhoto}/>
                 </NavLink>
                 <div className={s.userFollow}>
@@ -27,18 +28,15 @@ let User = ({user, followingInProgress, unFollow, follow}) => {
                     }
                 </div>
             </div>
+
             <div className={s.userDescription}>
                 <div><b>Id: </b>{user.id}</div>
                 <div><b>Name: </b>{user.name}</div>
                 <div><b>Status: </b>{user.status}</div>
-
             </div>
-
-
 
         </div>
     )
-
 }
 
 export default User;

@@ -1,40 +1,37 @@
-.minFooter {
+.wrapper {
     grid-area: footer;
     background-color: rgb(255, 255, 255);
-
-
-
-padding-left: 10px;
+    padding-left: 10px;
     padding-right: 10px ;
     display: grid;
-    grid-template-areas:  "foot footr dffddd";
-
+    grid-template-areas:  "cop about logo";
     grid-template-rows: 64px 1fr;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.rrr {
-    grid-area: foot;
+.copyright {
+    grid-area: cop;
     margin-top: 20px;
-
 }
-.dsds {
-    grid-area: footr;
+
+.wrapperAbout {
+    grid-area: about;
     text-align: center;
     margin-top: 20px;
 }
-.ddd {
-    grid-area: dffddd;
+
+.logoSiteFooter {
+    grid-area: logo;
     text-align: right;
 }
-.abait {
+
+.sideBar {
     padding-right: 30px;
 }
 
-.ddd img {
+.logoSiteFooter img {
     width: 40px;
     height: 40px;
     margin-right: 17px;
     margin-top: 2px;
-
 }

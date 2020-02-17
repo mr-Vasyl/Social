@@ -1,4 +1,3 @@
-
 import {getAuthUserData} from "./AuthReducer";
 
 const SET_INITIALIZED_SUCCESS = 'SET_INITIALIZED_SUCCESS'
@@ -14,7 +13,6 @@ const appReducer = (state = initialState, action) => {
                 ...state,
                 initialized: true
             }
-
         default:
             return state;
     }
@@ -23,14 +21,12 @@ const appReducer = (state = initialState, action) => {
 export const initializedSuccess = () =>
     ({type: SET_INITIALIZED_SUCCESS});
 
-
 export const initializeApp = () => (dispatch) => {
     let promise = dispatch(getAuthUserData());
     Promise.all([promise])
         .then(() => {
-        dispatch(initializedSuccess());
-    })
+            dispatch(initializedSuccess());
+        })
 }
-
 
 export default appReducer;

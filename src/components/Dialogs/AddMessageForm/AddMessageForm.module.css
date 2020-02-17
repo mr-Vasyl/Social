@@ -4,17 +4,16 @@
     font: inherit;
     color: inherit;
     background-color: transparent;
-    height:32px;
-    width: 88px ;
+    height: 32px;
+    width: 88px;
     border-radius: 5px
 }
 
 .sendMessage:hover {
     border: 1px solid #1890ff;
     color: #1890ff;
-    /*border: none;*/
-
 }
+
 .transition {
     transition: 0.5s;
 }

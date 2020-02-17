@@ -6,16 +6,12 @@
     width: 1012px;
     margin: 0 auto;
 
-
     position: absolute;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
 
-
-
-    /*height: 100%;*/
     grid-template-areas: "head head" "nav cont" "footer footer";
 
     grid-template-rows: 64px 1fr;
@@ -26,19 +22,14 @@
 body {
     background-color: #e9ebee;
     overflow-y: scroll;
-
 }
 
 .appWrapperContent {
     grid-area: cont;
     background-color: #ffffff;
     min-width: 891px;
-
-
 }
-
 
 html {
     background-color: #e9ebee;
-
 }

@@ -1,7 +1,6 @@
 .userPhoto {
     width: 100px;
     height: 100px;
-
 }
 
 .userProfile {
@@ -10,15 +9,17 @@
     border: solid 1px #c0cacd;
     margin: 5px;
 }
+
 .userProfile:hover {
     border: solid 1px #1890ff;
 
 }
 
 .userDescription {
-padding-left: 10px;
+    padding-left: 10px;
 }
-.userFollow{
+
+.userFollow {
     padding-top: 5px;
     padding-left: 12px;
 }

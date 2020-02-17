@@ -1,12 +1,14 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {compose} from "redux";
+
 import Users from "./Users";
 import Preloader from "../Common/Preloader/Preloader.jsx";
 import {
     follow, requestUsers, setCurrentPage,
     toggleFollowingProgress, unFollow
 } from "../../Redux/UsersReducer";
-import {compose} from "redux";
+
 import {
     getAuth,
     getFollowingInProgress,
@@ -41,7 +43,6 @@ class UsersContainer extends React.Component {
                    onPageChanged={this.onPageChanged}
                    followingInProgress={this.props.followingInProgress}
                    isAuth={this.props.isAuth}
-
             />
         </>
     }
@@ -60,6 +61,7 @@ let mapStateToProps = (state) => {
 
     }
 }
+
 export default compose(
     connect(mapStateToProps, {
         follow, unFollow,

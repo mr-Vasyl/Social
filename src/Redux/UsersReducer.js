@@ -24,24 +24,11 @@ const UsersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 users: updateObjectArray(state.users, action.userId, "id", {followed: true})
-                // users: state.users.map(u => {
-                //     if (u.id === action.userId) {
-                //         return {...u, followed: true}
-                //     }
-                //     return u;
-                // })
             }
-
         case UN_FOLLOW:
             return {
                 ...state,
                 users: updateObjectArray(state.users, action.userId, "id", {followed: false})
-                // users: state.users.map(u => {
-                //     if (u.id === action.userId) {
-                //         return {...u, followed: false}
-                //     }
-                //     return u;
-                // })
             }
         case SET_USERS: {
             return {
@@ -69,6 +56,7 @@ const UsersReducer = (state = initialState, action) => {
             return state;
     }
 }
+
 export const followSuccess = (userId) =>
     ({type: FOLLOW, userId});
 export const unFollowSuccess = (userId) =>
@@ -99,7 +87,6 @@ export const requestUsers = (page, pageSize) => {
     }
 }
 
-
 const followUnfollowFlow = async (dispatch, userId, apiMethod, actionCreator) => {
     dispatch(toggleFollowingProgress(true, userId))
     let response = await apiMethod(userId)
@@ -120,7 +107,6 @@ export const follow = (userId) => {
 export const unFollow = (userId) => {
     return async (dispatch) => {
         followUnfollowFlow(dispatch, userId, usersAPI.unFollow.bind(usersAPI), unFollowSuccess)
-
     }
 }
 export default UsersReducer;

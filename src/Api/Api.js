@@ -1,6 +1,5 @@
 import * as axios from "axios";
 
-
 const instance = axios.create({
     withCredentials: true,
     baseURL: "https://social-network.samuraijs.com/api/1.0/",
@@ -25,10 +24,10 @@ export const usersAPI = {
     getProfile(userId) {
         console.warn('Obsolete method. Please profileAPI object')
         return profileAPI.getProfile(userId)
-
     },
 
 }
+
 export const profileAPI = {
 
     getProfile(userId) {
@@ -53,7 +52,6 @@ export const profileAPI = {
     saveProfile(profile) {
         return instance.put(`profile`, profile);
     },
-
 }
 
 export const authAPI = {
@@ -66,8 +64,6 @@ export const authAPI = {
     logout() {
         return instance.delete(`auth/login`)
     },
-
-
 }
 
 export const securityAPI = {

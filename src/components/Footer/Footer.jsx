@@ -1,38 +1,30 @@
 import React from 'react';
-import s from "./Footer.module.css"
-import {Icon} from 'antd';
 import {NavLink} from "react-router-dom";
 
+import s from "./Footer.module.css"
 
-const Footer = (props) => {
-
-
+const Footer = () => {
     return (
-        <footer className={s.minFooter}>
-            <div className={s.dsds}>
-
-                <div className={s.abait}>
+        <footer className={s.wrapper}>
+            <div className={s.wrapperAbout}>
+                <div className={s.sideBar}>
                     <b>
-                    <NavLink to=""> About </NavLink>
-                    <NavLink to=""> Help </NavLink>
-                    <NavLink to=""> Support </NavLink>
-                    <NavLink to=""> Contacts </NavLink>
+                        <NavLink to=""> About </NavLink>
+                        <NavLink to=""> Help </NavLink>
+                        <NavLink to=""> Support </NavLink>
+                        <NavLink to=""> Contacts </NavLink>
                     </b>
                 </div>
             </div>
 
-            <div className={s.ddd}>
+            <div className={s.logoSiteFooter}>
                 <NavLink to={'/profile'}>
-                    <img src={window.location.origin + '/logo.svg'}/>
+                    <img alt="logoSiteFooter" src={window.location.origin + '/logo.svg'}/>
                 </NavLink>
-                <div className={s.users}><b>users:</b> 1,578</div>
-
-
+                <div><b>users:</b> 1,578</div>
             </div>
-            <div className={s.rrr}>© 2020 Social Network
+            <div className={s.copyright}>© 2020 Social Network
             </div>
-
-
         </footer>
     )
 }

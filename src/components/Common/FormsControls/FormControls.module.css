@@ -1,4 +1,3 @@
-
 .formControl.error input,
 .formControl.error textarea {
     border: solid red 1px;
@@ -7,6 +6,7 @@
 .formControl.error span {
     color: red;
 }
+
 .formSummaryError {
     border: red 1px solid;
     color: red;
@@ -17,6 +17,7 @@
     width: 200px;
     margin: 0 8px 8px 0;
 }
+
 .qwe {
    width: 100%;
 }

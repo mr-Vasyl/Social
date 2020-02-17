@@ -2,11 +2,7 @@
     grid-area: head;
     background-color: rgb(255, 255, 255);
     height: 64px;
-
-
-
 }
-
 
 .box {
     -webkit-box-shadow: 0 10px 6px -6px #777;
@@ -14,28 +10,21 @@
     box-shadow: 0 10px 6px -6px #777;
 }
 .headerNavigation {
-    /*display: grid;*/
-    /*grid-template-columns: repeat(2, 1fr);*/
     background-color: rgb(255, 255, 255);
 
 }
 
 .Search {
     margin-top: 10px;
-
 }
 
 .loginBlock {
     float: right;
     margin-top: 14px;
     margin-right: 10px;
-
-
 }
-.ddd Button {
+.enterUsers Button {
     margin-left: 10px ;
-    /*padding-left: 10px;*/
-    /*position: center;*/
 }
 
 .headerNavigation img {

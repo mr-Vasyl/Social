@@ -1,17 +1,8 @@
 import React from 'react';
-import s from "./Settings.module.css";
-import {Button} from 'antd';
-
-const Settings = (props) => {
-
-    return (
-        <div>
-            <div>Setting in process...</div>
-
-        </div>
 
 
-    )
+const Settings = () => {
+    return <div>Setting in process...</div>
 }
 
 export default Settings;
